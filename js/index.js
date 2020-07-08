@@ -55,11 +55,20 @@ function navFocusFunction() {
 document.addEventListener("dragstart", dragFunction)
 
 function dragFunction(){
-    alert("You dragged!")
+    alert("You just dragged!")
 }
 
-// 9.
+// 9. resize
 
+  function displayWindowSize() {
+      let w = document.documentElement.clientWidth;
+      let h = document.documentElement.clientHeight;
 
+      document.querySelector('.intro p').textContent = `Width: ${w}, Height: ${h}`
+  }
 
-// 10.
+  window.addEventListener('resize', displayWindowSize)
+
+  displayWindowSize();
+
+  // 10. 
