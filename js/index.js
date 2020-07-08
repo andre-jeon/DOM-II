@@ -38,10 +38,10 @@ function logKey(e) {
 }
 
 // 6. click
-document.querySelector(".nav-link").addEventListener("click", navFocusFunction);
+document.querySelector(".nav").addEventListener("click", navFocusFunction);
 
 function navFocusFunction() {
-  document.querySelector(".nav-link").style.fontSize = "100px";
+  document.querySelector(".nav-link").style.fontSize = "30px";
 }
 
 // 7. scroll
@@ -59,16 +59,21 @@ function dragFunction(){
 }
 
 // 9. resize
+function displayWindowSize() {
+    let w = document.documentElement.clientWidth;
+    let h = document.documentElement.clientHeight;
 
-  function displayWindowSize() {
-      let w = document.documentElement.clientWidth;
-      let h = document.documentElement.clientHeight;
+    document.querySelector('.intro p').textContent = `Width: ${w}, Height: ${h}`
+}
 
-      document.querySelector('.intro p').textContent = `Width: ${w}, Height: ${h}`
+window.addEventListener('resize', displayWindowSize)
+displayWindowSize();
+
+  // 10. select
+document.querySelector(".content-section inverse-content").addEventListener("change", upperCaseFunction);
+
+function upperCaseFunction() {
+    document.querySelector(".content-section inverse-content p").toUpperCase();
   }
 
-  window.addEventListener('resize', displayWindowSize)
-
-  displayWindowSize();
-
-  // 10. 
+upperCaseFunction()
