@@ -12,7 +12,7 @@ document.querySelector('.footer p').addEventListener('wheel', zoomFucntion);
 
 function zoomFucntion() {
     this.style.fontSize = '35px'
-    this.textContent = 'YUH! YUH! YUH!'
+    this.textContent = 'FOOTER!'
 }
 
 // 3. mouseover
@@ -69,14 +69,17 @@ function displayWindowSize() {
 window.addEventListener('resize', displayWindowSize)
 displayWindowSize();
 
-  // 10. select
-
-document.addEventListener('select', logSelection);
-
-function logSelection(event) {
-    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-    document.alert(`You selected: ${selection}`)
-}
+  // 10. load
+const pageFooterLoad = document.querySelector('footer');
+window.addEventListener('load', (event) => {
+    pageFooterLoad.style.backgroundColor = 'grey';
+});
 
 
 
+
+
+document.querySelector("nav").addEventListener("click", function(event){
+    document.querySelector(".nav-links")
+    event.preventDefault()
+}, false);
