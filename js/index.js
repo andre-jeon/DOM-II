@@ -70,10 +70,13 @@ window.addEventListener('resize', displayWindowSize)
 displayWindowSize();
 
   // 10. select
-document.querySelector(".content-section inverse-content").addEventListener("change", upperCaseFunction);
 
-function upperCaseFunction() {
-    document.querySelector(".content-section inverse-content p").toUpperCase();
-  }
+document.addEventListener('select', logSelection);
 
-upperCaseFunction()
+function logSelection(event) {
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    document.alert(`You selected: ${selection}`)
+}
+
+
+
